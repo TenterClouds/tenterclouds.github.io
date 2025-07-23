@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TenterCloud Hosting</title>
-  <link rel="icon" href="favicon.ico" />
+  <link rel="icon" href="https://ls.tentercloud.cfd/logo.png" />
   <style>
     :root {
       --bg: #0f172a;
-      --card: #1e293b;
-      --accent: #3b82f6;
+      --card: rgba(30, 41, 59, 0.8);
+      --accent: #00f7ff;
       --text: #e2e8f0;
-      --nav: #000000;
-      --highlight: #00ffff; /* Aqua */
+      --nav: #000;
+      --highlight: #00f7ff;
     }
     * {
       margin: 0;
@@ -27,210 +27,228 @@
       background: url('https://wallpapercave.com/wp/wp11240797.jpg') no-repeat center center fixed;
       background-size: cover;
       color: var(--text);
-      animation: fadeBody 1s ease;
+      animation: fadeInBody 1.2s ease;
     }
     nav {
       background-color: var(--nav);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 30px;
+      padding: 15px 30px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
     nav img {
-      height: 40px;
+      height: 45px;
     }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 25px;
     }
     nav a {
       color: var(--text);
       text-decoration: none;
       font-weight: bold;
       font-size: 1em;
-      cursor: pointer;
       transition: color 0.3s ease;
     }
     nav a:hover {
       color: var(--highlight);
     }
+
     header {
       text-align: center;
-      padding: 60px 20px 30px;
-      background: rgba(0, 0, 0, 0.6);
+      padding: 60px 20px 40px;
     }
     header img {
       width: 100px;
-      height: auto;
+      animation: dropIn 1.2s ease;
     }
     header h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
+      margin-top: 20px;
       color: var(--highlight);
-      margin-top: 10px;
+      animation: fadeInUp 1s ease;
     }
     header p {
       font-size: 1.1em;
       color: #cbd5e1;
+      animation: fadeInUp 1.4s ease;
     }
-    .btn {
-      margin-top: 12px;
-      display: inline-block;
-      padding: 8px 16px;
-      background: var(--accent);
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-    .btn:hover {
-      background: #2563eb;
-      transform: scale(1.05);
-    }
+
     .section {
       display: none;
-      padding: 50px 20px;
       max-width: 1100px;
-      margin: auto;
-      background: rgba(15, 23, 42, 0.8);
-      border-radius: 12px;
+      margin: 40px auto;
+      padding: 30px;
+      background: var(--card);
+      border-radius: 14px;
+      animation: fadeIn 0.5s ease;
     }
+
     .section.active {
       display: block;
     }
+
     .plans-grid {
       display: grid;
-      gap: 30px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
+
     .plan-card {
-      background-color: var(--card);
-      border-radius: 14px;
+      background-color: rgba(15, 23, 42, 0.85);
+      border-radius: 12px;
       padding: 20px;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
     }
+
     .plan-card:hover {
-      transform: translateY(-5px) scale(1.03);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-5px) scale(1.02);
     }
+
     .plan-card h3 {
-      font-size: 1.3em;
       color: var(--highlight);
+      font-size: 1.4em;
       margin-bottom: 10px;
     }
+
     .plan-card p {
-      margin: 6px 0;
+      margin: 5px 0;
       font-size: 0.95em;
     }
+
     .price {
-      font-size: 1.1em;
-      font-weight: bold;
-      margin-top: 10px;
       color: #facc15;
+      font-weight: bold;
+      font-size: 1.2em;
+      margin: 10px 0;
     }
-    footer {
-      background: var(--card);
-      text-align: center;
-      padding: 30px 10px;
-      font-size: 0.9em;
-      color: #94a3b8;
-    }
-    footer a {
-      color: var(--highlight);
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--accent);
+      color: black;
       text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      margin-top: 10px;
+      transition: background 0.3s ease;
     }
-    @keyframes fadeBody {
+
+    .btn:hover {
+      background: #0ff;
+    }
+
+    footer {
+      background: #111827;
+      color: #94a3b8;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes dropIn {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInBody {
       from { opacity: 0; }
       to { opacity: 1; }
     }
   </style>
 </head>
 <body>
+
   <nav>
-    <img src="https://ls.tentercloud.cfd/logo.png" alt="Logo" />
+    <img src="https://ls.tentercloud.cfd/logo.png" alt="TenterCloud Logo">
     <ul>
-      <li><a onclick="showSection('home')">Home</a></li>
-      <li><a onclick="showSection('mc')">MC Host</a></li>
-      <li><a onclick="showSection('vps')">VPS Host</a></li>
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('mc')">MC Host</a></li>
+      <li><a href="#" onclick="showSection('vps')">VPS Host</a></li>
       <li><a href="https://discord.gg/Geux3Sdb39" target="_blank">Discord</a></li>
     </ul>
   </nav>
 
-  <header>
-    <img src="https://ls.tentercloud.cfd/logo.png" alt="Logo" />
-    <h1>Welcome to <span style="color: var(--highlight)">TenterCloud</span></h1>
+  <header id="home" class="section active">
+    <img src="https://ls.tentercloud.cfd/logo.png" alt="TenterCloud Logo">
+    <h1>Welcome to TenterCloud</h1>
     <p>Your one-stop solution for Minecraft & VPS Hosting</p>
   </header>
 
-  <section id="home" class="section active">
-    <h2 style="text-align:center; color: var(--highlight);">About TenterCloud</h2>
-    <p style="text-align:center;">TenterCloud is a reliable hosting service providing premium Minecraft server hosting and VPS plans for everyone. Affordable, fast, and community-driven. Hosting made simple!</p>
-  </section>
-
   <section id="mc" class="section">
-    <h2 style="text-align:center; color: var(--highlight);">Minecraft Hosting Plans</h2>
+    <h2 style="text-align:center;color:var(--highlight);margin-bottom:25px;">Minecraft Hosting Plans</h2>
     <div class="plans-grid">
       <div class="plan-card">
-        <h3>Dirt Plan</h3>
-        <p>2GB RAM • 5GB Disk</p>
-        <p>100% CPU</p>
-        <div class="price">₹20/Month</div>
-        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+        <h3>Basic MC</h3>
+        <p>2GB RAM • 10GB SSD</p>
+        <p>Unlimited Slots</p>
+        <div class="price">₹49/Month</div>
+        <a href="https://discord.gg/Geux3Sdb39" class="btn" target="_blank">Buy Now</a>
       </div>
       <div class="plan-card">
-        <h3>Stone Plan</h3>
-        <p>6GB RAM • 15GB Disk</p>
-        <p>100% CPU</p>
-        <div class="price">₹79/Month</div>
-        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+        <h3>Pro MC</h3>
+        <p>4GB RAM • 30GB SSD</p>
+        <p>Plugin Support</p>
+        <div class="price">₹99/Month</div>
+        <a href="https://discord.gg/Geux3Sdb39" class="btn" target="_blank">Buy Now</a>
       </div>
       <div class="plan-card">
-        <h3>Redstone Plan</h3>
-        <p>10GB RAM • 25GB Disk</p>
-        <p>100% CPU</p>
-        <div class="price">₹149/Month</div>
-        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+        <h3>Beast MC</h3>
+        <p>8GB RAM • 50GB SSD</p>
+        <p>All Gamemodes</p>
+        <div class="price">₹199/Month</div>
+        <a href="https://discord.gg/Geux3Sdb39" class="btn" target="_blank">Buy Now</a>
       </div>
     </div>
   </section>
 
   <section id="vps" class="section">
-    <h2 style="text-align:center; color: var(--highlight);">VPS Hosting Plans</h2>
+    <h2 style="text-align:center;color:var(--highlight);margin-bottom:25px;">VPS Hosting Plans</h2>
     <div class="plans-grid">
       <div class="plan-card">
         <h3>Starter VPS</h3>
         <p>1 vCPU • 2GB RAM</p>
         <p>30GB SSD • 1TB Bandwidth</p>
         <div class="price">₹99/Month</div>
-        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+        <a href="https://discord.gg/Geux3Sdb39" class="btn" target="_blank">Buy Now</a>
       </div>
       <div class="plan-card">
         <h3>Pro VPS</h3>
         <p>2 vCPU • 4GB RAM</p>
         <p>60GB SSD • 2TB Bandwidth</p>
         <div class="price">₹199/Month</div>
-        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+        <a href="https://discord.gg/Geux3Sdb39" class="btn" target="_blank">Buy Now</a>
       </div>
       <div class="plan-card">
         <h3>Beast VPS</h3>
         <p>4 vCPU • 8GB RAM</p>
         <p>100GB SSD • 5TB Bandwidth</p>
         <div class="price">₹349/Month</div>
-        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+        <a href="https://discord.gg/Geux3Sdb39" class="btn" target="_blank">Buy Now</a>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2025 TenterCloud Hosting |
-    <a href="https://panel.tentercloud.cfd" target="_blank">Panel</a> |
-    <a href="https://status.tentercloud.cfd" target="_blank">Status</a>
+    &copy; 2025 TenterCloud. All rights reserved.
   </footer>
 
   <script>
@@ -243,4 +261,3 @@
   </script>
 </body>
 </html>
-
