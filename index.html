@@ -12,8 +12,7 @@
       --accent: #3b82f6;
       --text: #e2e8f0;
       --nav: #000000;
-      --highlight: #60a5fa;
-      --aqua: #7fdbff;
+      --highlight: #00ffff; /* aqua */
     }
     * {
       margin: 0;
@@ -28,7 +27,7 @@
       background: url('https://wallpapercave.com/wp/wp11240797.jpg') no-repeat center center fixed;
       background-size: cover;
       color: var(--text);
-      animation: fadeBody 1.2s ease;
+      animation: fadeBody 1s ease;
     }
     nav {
       background-color: var(--nav);
@@ -42,8 +41,7 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
     nav img {
-      height: 45px;
-      animation: logoFade 1.5s ease;
+      height: 40px;
     }
     nav ul {
       list-style: none;
@@ -64,17 +62,16 @@
     header {
       text-align: center;
       padding: 60px 20px 30px;
-      background: rgba(15, 23, 42, 0.7);
-      animation: slideTop 0.8s ease;
-    }
-    header h1 {
-      font-size: 2.8em;
-      margin-top: 15px;
-      color: var(--aqua);
+      background: rgba(0, 0, 0, 0.6);
     }
     header img {
-      height: 60px;
-      margin-bottom: 10px;
+      width: 100px;
+      height: auto;
+    }
+    header h1 {
+      font-size: 2.5em;
+      color: var(--highlight);
+      margin-top: 10px;
     }
     header p {
       font-size: 1.1em;
@@ -100,22 +97,12 @@
       padding: 50px 20px;
       max-width: 1100px;
       margin: auto;
-      animation: fadeIn 0.6s ease-in-out;
       background: rgba(15, 23, 42, 0.8);
       border-radius: 12px;
+      animation: fadeIn 0.5s ease-in-out;
     }
-    .home-section {
+    .section.active {
       display: block;
-      text-align: center;
-      max-width: 900px;
-      margin: 40px auto;
-      background: rgba(15, 23, 42, 0.8);
-      padding: 30px;
-      border-radius: 12px;
-      animation: fadeIn 0.8s ease;
-    }
-    .home-section h2 {
-      color: var(--aqua);
     }
     .plans-grid {
       display: grid;
@@ -128,41 +115,25 @@
       padding: 20px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: slideUp 0.6s ease;
     }
     .plan-card:hover {
       transform: translateY(-5px) scale(1.03);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     }
     .plan-card h3 {
-      font-size: 1.4em;
-      margin-bottom: 10px;
+      font-size: 1.3em;
       color: var(--highlight);
+      margin-bottom: 10px;
     }
     .plan-card p {
       margin: 6px 0;
       font-size: 0.95em;
     }
     .price {
-      font-size: 1.2em;
+      font-size: 1.1em;
       font-weight: bold;
       margin-top: 10px;
       color: #facc15;
-    }
-    .links {
-      text-align: center;
-      padding: 40px 10px;
-    }
-    .links a {
-      color: var(--highlight);
-      font-weight: bold;
-      margin: 10px 20px;
-      display: inline-block;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-    .links a:hover {
-      transform: scale(1.1);
     }
     footer {
       background: var(--card);
@@ -178,18 +149,6 @@
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.98); }
       to { opacity: 1; transform: scale(1); }
-    }
-    @keyframes slideTop {
-      from { transform: translateY(-30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { transform: translateY(40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes logoFade {
-      from { opacity: 0; transform: rotate(-20deg); }
-      to { opacity: 1; transform: rotate(0deg); }
     }
     @keyframes fadeBody {
       from { opacity: 0; }
@@ -207,25 +166,85 @@
       <li><a href="https://discord.gg/Geux3Sdb39" target="_blank">Discord</a></li>
     </ul>
   </nav>
+
   <header>
     <img src="mylogo.png" alt="Logo" />
-    <h1>Welcome to <span style="color: var(--aqua)">TenterCloud</span></h1>
-    <p>Your ultimate solution for Minecraft and VPS hosting!</p>
+    <h1>Welcome to <span style="color: var(--highlight)">TenterCloud</span></h1>
+    <p>Your one-stop solution for Minecraft & VPS Hosting</p>
   </header>
-  <section id="home" class="home-section">
-    <h2>About TenterCloud</h2>
-    <p>TenterCloud provides premium, budget, and performance Minecraft & VPS hosting services at ultra-affordable prices.</p>
+
+  <section id="home" class="section active">
+    <h2 style="text-align:center; color: var(--highlight);">About TenterCloud</h2>
+    <p style="text-align:center;">TenterCloud is a powerful, reliable and affordable hosting platform for Minecraft servers and VPS needs. With blazing fast performance, 24/7 uptime, and unbeatable pricing — we make hosting easy and accessible for everyone!</p>
   </section>
-  <!-- More content like MC/VPS plans will come here -->
+
+  <section id="mc" class="section">
+    <h2 style="text-align:center; color: var(--highlight);">Minecraft Hosting Plans</h2>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <h3>Dirt Plan</h3>
+        <p>2GB RAM • 5GB Disk</p>
+        <p>100% CPU</p>
+        <div class="price">₹20/Month</div>
+        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>Stone Plan</h3>
+        <p>6GB RAM • 15GB Disk</p>
+        <p>100% CPU</p>
+        <div class="price">₹79/Month</div>
+        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>Redstone Plan</h3>
+        <p>10GB RAM • 25GB Disk</p>
+        <p>100% CPU</p>
+        <div class="price">₹149/Month</div>
+        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="vps" class="section">
+    <h2 style="text-align:center; color: var(--highlight);">VPS Hosting Plans</h2>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <h3>Starter VPS</h3>
+        <p>1 vCPU • 2GB RAM</p>
+        <p>30GB SSD • 1TB Bandwidth</p>
+        <div class="price">₹99/Month</div>
+        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>Pro VPS</h3>
+        <p>2 vCPU • 4GB RAM</p>
+        <p>60GB SSD • 2TB Bandwidth</p>
+        <div class="price">₹199/Month</div>
+        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>Beast VPS</h3>
+        <p>4 vCPU • 8GB RAM</p>
+        <p>100GB SSD • 5TB Bandwidth</p>
+        <div class="price">₹349/Month</div>
+        <a class="btn" href="https://discord.gg/Geux3Sdb39" target="_blank">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 TenterCloud Hosting | <a href="https://panel.tentercloud.cfd">Panel</a> | <a href="https://status.tentercloud.cfd">Status</a>
+  </footer>
+
   <script>
     function showSection(id) {
-      document.querySelectorAll('.section, .home-section').forEach(s => s.style.display = 'none');
-      const section = document.getElementById(id);
-      if (section) section.style.display = 'block';
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
     }
   </script>
 </body>
 </html>
+
 
 
 
