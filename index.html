@@ -2,90 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TenterCloud Hosting</title>
   <link rel="icon" href="https://ls.tentercloud.cfd/logo.png" />
   <style>
     :root {
       --bg: #0f172a;
-      --card: rgba(30, 41, 59, 0.8);
+      --card: rgba(30, 41, 59, 0.85);
       --accent: #00f7ff;
       --text: #e2e8f0;
       --nav: #000;
-      --highlight: #00f7ff;
       --footer-bg: #111827;
     }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     html, body {
       scroll-behavior: smooth;
       background-color: var(--bg);
-    }
-    body {
       font-family: 'Segoe UI', sans-serif;
       background: url('https://wallpapercave.com/wp/wp11240797.jpg') no-repeat center center fixed;
       background-size: cover;
       color: var(--text);
-      animation: fadeInBody 1.2s ease;
     }
+
     nav {
       background-color: var(--nav);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
+      padding: 12px 30px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
+
     nav img {
       height: 45px;
     }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 25px;
     }
+
     nav a {
       color: var(--text);
       text-decoration: none;
       font-weight: bold;
-      font-size: 1em;
-      transition: color 0.3s ease;
+      transition: 0.3s ease;
     }
+
     nav a:hover {
-      color: var(--highlight);
+      color: var(--accent);
     }
 
     header {
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 60px 20px;
       background-color: rgba(0, 0, 0, 0.6);
     }
+
     header img {
       width: 100px;
-      animation: dropIn 1.2s ease;
     }
+
     header h1 {
       font-size: 2.8em;
-      margin-top: 20px;
-      color: var(--highlight);
-      animation: fadeInUp 1s ease;
+      margin-top: 15px;
+      color: var(--accent);
     }
+
     header p {
       font-size: 1.1em;
       color: #cbd5e1;
-      animation: fadeInUp 1.4s ease;
     }
 
     .section {
       display: none;
       max-width: 1100px;
-      margin: 40px auto;
+      margin: 30px auto;
       padding: 30px;
       background: var(--card);
       border-radius: 14px;
@@ -103,27 +104,28 @@
     }
 
     .plan-card {
-      background-color: rgba(15, 23, 42, 0.85);
+      background-color: rgba(15, 23, 42, 0.9);
       border-radius: 12px;
       padding: 20px;
       text-align: center;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s;
     }
 
     .plan-card:hover {
-      transform: translateY(-5px) scale(1.02);
+      transform: translateY(-6px);
+      box-shadow: 0 0 15px var(--accent);
     }
 
     .plan-card h3 {
-      color: var(--highlight);
+      color: var(--accent);
       font-size: 1.4em;
       margin-bottom: 10px;
     }
 
     .plan-card p {
-      margin: 5px 0;
       font-size: 0.95em;
+      margin: 4px 0;
     }
 
     .price {
@@ -142,11 +144,27 @@
       font-weight: bold;
       border-radius: 6px;
       margin-top: 10px;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
 
     .btn:hover {
       background: #0ff;
+    }
+
+    .bottom-links {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .bottom-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 15px;
     }
 
     footer {
@@ -154,7 +172,7 @@
       color: #94a3b8;
       text-align: center;
       padding: 25px 10px;
-      margin-top: 60px;
+      margin-top: 50px;
     }
 
     @keyframes fadeIn {
@@ -162,26 +180,18 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    @keyframes dropIn {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInBody {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <img src="https://ls.tentercloud.cfd/logo.png" alt="TenterCloud Logo">
+    <img src="https://ls.tentercloud.cfd/logo.png" alt="Logo">
     <ul>
       <li><a href="#" onclick="showSection('home')">Home</a></li>
       <li><a href="#" onclick="showSection('mc')">MC Host</a></li>
@@ -194,10 +204,12 @@
     <img src="https://ls.tentercloud.cfd/logo.png" alt="TenterCloud Logo">
     <h1>Welcome to TenterCloud</h1>
     <p>Your one-stop solution for Minecraft & VPS Hosting</p>
+    <br>
+    <p style="max-width: 700px; margin: auto;">At TenterCloud, we provide reliable, affordable and high-performance hosting tailored for Minecraft servers and scalable VPS deployments. We aim to empower developers, gamers and creators with industry-grade performance at budget-friendly pricing.</p>
   </header>
 
   <section id="mc" class="section">
-    <h2 style="text-align:center;color:var(--highlight);margin-bottom:25px;">Minecraft Hosting Plans</h2>
+    <h2 style="text-align:center;color:var(--accent);margin-bottom:25px;">Minecraft Hosting Plans</h2>
     <div class="plans-grid">
       <div class="plan-card">
         <h3>Basic MC</h3>
@@ -224,7 +236,7 @@
   </section>
 
   <section id="vps" class="section">
-    <h2 style="text-align:center;color:var(--highlight);margin-bottom:25px;">VPS Hosting Plans</h2>
+    <h2 style="text-align:center;color:var(--accent);margin-bottom:25px;">VPS Hosting Plans</h2>
     <div class="plans-grid">
       <div class="plan-card">
         <h3>Starter VPS</h3>
@@ -250,6 +262,13 @@
     </div>
   </section>
 
+  <div class="bottom-links">
+    <h3 style="color:var(--accent); margin-bottom:10px;">Quick Links</h3>
+    <a href="https://panel.gp.tentercloud.cfd" target="_blank">Panel</a> |
+    <a href="https://status.tentercloud.cfd" target="_blank">Status</a> |
+    <a href="https://discord.gg/Geux3Sdb39" target="_blank">Join Discord</a>
+  </div>
+
   <footer>
     &copy; 2025 TenterCloud. All rights reserved.
   </footer>
@@ -262,6 +281,7 @@
       document.getElementById(id).classList.add('active');
     }
   </script>
+
 </body>
 </html>
 
