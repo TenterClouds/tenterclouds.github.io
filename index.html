@@ -189,7 +189,77 @@
   </style>
 </head>
 <body>
-  <!-- Full content will be added below this line -->
+  <nav>
+    <img src="logo.png" alt="TenterCloud Logo" />
+    <ul>
+      <li><a onclick="showSection('home')">Home</a></li>
+      <li><a onclick="showSection('mc')">MC Host</a></li>
+      <li><a onclick="showSection('vps')">VPS Host</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Welcome to TenterCloud</h1>
+    <p>Premium and budget Minecraft & VPS hosting made for everyone.</p>
+  </header>
+
+  <section id="home" class="home-section">
+    <h2>About TenterCloud</h2>
+    <p>We provide powerful, affordable hosting services for Minecraft servers and VPS solutions. With instant setup and 24/7 support, you're always in good hands.</p>
+  </section>
+
+  <section id="mc" class="section">
+    <h2>Minecraft Hosting Plans</h2>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <h3>Dirt Plan</h3>
+        <p>2GB RAM • 100% CPU • 5GB SSD</p>
+        <p class="price">₹20/mo</p>
+        <a href="https://discord.gg/Geux3Sdb39" class="btn">Buy Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>Grass Plan</h3>
+        <p>4GB RAM • 100% CPU • 10GB SSD</p>
+        <p class="price">₹49/mo</p>
+        <a href="https://discord.gg/Geux3Sdb39" class="btn">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="vps" class="section">
+    <h2>VPS Hosting Plans</h2>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <h3>Starter VPS</h3>
+        <p>2vCPU • 2GB RAM • 20GB SSD</p>
+        <p class="price">₹150/mo</p>
+        <a href="https://discord.gg/Geux3Sdb39" class="btn">Buy Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>Pro VPS</h3>
+        <p>4vCPU • 4GB RAM • 40GB SSD</p>
+        <p class="price">₹290/mo</p>
+        <a href="https://discord.gg/Geux3Sdb39" class="btn">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="links">
+    <a href="https://gp.tentercloud.cfd">Game Panel</a>
+    <a href="https://status.tentercloud.cfd">Status</a>
+    <a href="https://discord.gg/Geux3Sdb39">Discord</a>
+  </div>
+
+  <footer>
+    &copy; 2025 TenterCloud. All rights reserved.
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section, .home-section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
 </body>
 </html>
 
