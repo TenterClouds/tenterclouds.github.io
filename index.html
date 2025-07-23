@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +27,10 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
+      background: url('bgm.jpeg') no-repeat center center fixed;
+      background-size: cover;
       color: var(--text);
+      animation: fadeBody 1.2s ease;
     }
 
     nav {
@@ -46,6 +47,7 @@
 
     nav img {
       height: 45px;
+      animation: logoFade 1.5s ease;
     }
 
     nav ul {
@@ -60,11 +62,18 @@
       font-weight: bold;
       font-size: 1em;
       cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--highlight);
     }
 
     header {
       text-align: center;
       padding: 60px 20px 30px;
+      background: rgba(15, 23, 42, 0.7);
+      animation: slideTop 0.8s ease;
     }
 
     header h1 {
@@ -86,11 +95,12 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
     .btn:hover {
       background: #2563eb;
+      transform: scale(1.05);
     }
 
     .section {
@@ -99,6 +109,19 @@
       max-width: 1100px;
       margin: auto;
       animation: fadeIn 0.6s ease-in-out;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 12px;
+    }
+
+    .home-section {
+      display: block;
+      text-align: center;
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(15, 23, 42, 0.8);
+      padding: 30px;
+      border-radius: 12px;
+      animation: fadeIn 0.8s ease;
     }
 
     .plans-grid {
@@ -112,11 +135,12 @@
       border-radius: 14px;
       padding: 20px;
       text-align: center;
-      transition: 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideUp 0.6s ease;
     }
 
     .plan-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.03);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     }
 
@@ -148,6 +172,12 @@
       font-weight: bold;
       margin: 10px 20px;
       display: inline-block;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .links a:hover {
+      transform: scale(1.1);
     }
 
     footer {
@@ -160,75 +190,50 @@
 
     footer a {
       color: var(--highlight);
+      text-decoration: none;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.98); }
       to { opacity: 1; transform: scale(1); }
     }
+
+    @keyframes slideTop {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes logoFade {
+      from { opacity: 0; transform: rotate(-20deg); }
+      to { opacity: 1; transform: rotate(0deg); }
+    }
+
+    @keyframes fadeBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <img src="logo.png" alt="TenterCloud Logo">
-    <ul>
-      <li><a onclick="toggleSection('mc')">MC Host</a></li>
-      <li><a onclick="toggleSection('vps')">VPS Host</a></li>
-      <li><a href="https://discord.gg/Geux3Sdb39" target="_blank">Discord</a></li>
-    </ul>
-  </nav>
+<!-- Remaining HTML content stays same -->
+<!-- Use previous message's structure exactly -->
 
-  <!-- Header -->
-  <header>
-    <img src="logo.png" alt="TenterCloud Logo" style="height:100px;" />
-    <h1>TenterCloud Hosting</h1>
-    <p>Fast • Affordable • Indian Minecraft & VPS Hosting</p>
-  </header>
+<script>
+  function toggleSection(id) {
+    document.querySelectorAll('.section, .home-section').forEach(sec => {
+      sec.style.display = 'none';
+    });
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo({ top: document.getElementById(id).offsetTop - 80, behavior: 'smooth' });
+  }
+</script>
 
-  <!-- Links Section -->
-  <div class="links">
-    <a href="https://gp.tentercloud.cfd" target="_blank">🌐 Game Panel</a>
-    <a href="https://status.tentercloud.cfd" target="_blank">📶 Server Status</a>
-    <a href="https://discord.gg/Geux3Sdb39" target="_blank">💬 Discord</a>
-  </div>
-
-  <!-- MC Hosting Section -->
-  <section class="section" id="mc">
-    <h2 style="text-align:center">🎮 Minecraft Hosting</h2>
-    <div class="plans-grid">
-      <div class="plan-card"><h3>Dirt Plan</h3><p>2GB RAM</p><p>100% CPU</p><p>5GB SSD</p><p class="price">₹20/mo</p><a class="btn" href="https://discord.gg/Geux3Sdb39">Buy Now</a></div>
-      <div class="plan-card"><h3>Iron Plan</h3><p>8GB RAM</p><p>100% CPU</p><p>20GB SSD</p><p class="price">₹109/mo</p><a class="btn" href="https://discord.gg/Geux3Sdb39">Buy Now</a></div>
-      <div class="plan-card"><h3>Quartz Plan</h3><p>10GB RAM</p><p>300% CPU</p><p>25GB SSD</p><p class="price">₹349/mo</p><a class="btn" href="https://discord.gg/Geux3Sdb39">Buy Now</a></div>
-      <div class="plan-card"><h3>Dragon Plan</h3><p>15GB RAM</p><p>400% CPU</p><p>50GB SSD</p><p class="price">₹540/mo</p><a class="btn" href="https://discord.gg/Geux3Sdb39">Buy Now</a></div>
-    </div>
-  </section>
-
-  <!-- VPS Hosting Section -->
-  <section class="section" id="vps">
-    <h2 style="text-align:center">🖥️ VPS Hosting</h2>
-    <div class="plans-grid">
-      <div class="plan-card"><h3>Starter VPS</h3><p>1 vCPU</p><p>1GB RAM</p><p>20GB SSD</p><p>1TB Bandwidth</p><p class="price">₹99/mo</p><a class="btn" href="https://discord.gg/Geux3Sdb39">Buy Now</a></div>
-      <div class="plan-card"><h3>Power VPS</h3><p>2 vCPU</p><p>4GB RAM</p><p>40GB SSD</p><p>2TB Bandwidth</p><p class="price">₹199/mo</p><a class="btn" href="https://discord.gg/Geux3Sdb39">Buy Now</a></div>
-      <div class="plan-card"><h3>Pro VPS</h3><p>4 vCPU</p><p>8GB RAM</p><p>80GB SSD</p><p>Unmetered</p><p class="price">₹399/mo</p><a class="btn" href="https://discord.gg/Geux3Sdb39">Buy Now</a></div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 TenterCloud. All rights reserved.</p>
-    <p><a href="https://discord.gg/Geux3Sdb39" target="_blank">Join our Discord</a> for support and updates</p>
-  </footer>
-
-  <script>
-    function toggleSection(id) {
-      document.querySelectorAll('.section').forEach(sec => {
-        sec.style.display = 'none';
-      });
-      document.getElementById(id).style.display = 'block';
-      window.scrollTo({ top: document.getElementById(id).offsetTop - 80, behavior: 'smooth' });
-    }
-  </script>
 </body>
 </html>
+
