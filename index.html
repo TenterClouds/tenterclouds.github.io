@@ -1,78 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TenterCloud Hosting</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TenterCloud | Home</title>
   <link rel="icon" type="image/png" href="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {margin:0;font-family:Arial, sans-serif;background:#000;color:#fff;}
+    header {display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:#111;}
+    header img {height:50px;}
+    nav a {margin:0 15px;text-decoration:none;color:#fff;font-weight:bold;transition:0.3s;}
+    nav a:hover {color:#ffcc00;}
+    .hero {text-align:center;padding:60px 20px;}
+    .hero h1 {font-size:2.8rem;margin-bottom:10px;}
+    .hero p {font-size:1.2rem;color:#ccc;}
+    .services {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;padding:40px;}
+    .card {background:#111;border-radius:15px;padding:25px;text-align:center;transition:0.3s;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.6);}
+    .card:hover {transform:scale(1.05);box-shadow:0 6px 18px rgba(255,204,0,0.4);}
+    .card h2 {color:#ffcc00;margin-bottom:10px;}
+    .card p {color:#ccc;}
+    button {background:#ffcc00;border:none;padding:12px 20px;margin-top:15px;border-radius:8px;font-weight:bold;cursor:pointer;transition:0.3s;}
+    button:hover {background:#e6b800;transform:scale(1.1);}
+  </style>
 </head>
-<body class="bg-black text-white">
-
-  <!-- Navbar -->
-  <header class="bg-gray-900 shadow-md">
-    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-      <div class="flex items-center gap-2">
-        <img src="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true" class="h-10 w-10 rounded" alt="Logo">
-        <span class="text-xl font-bold">TenterCloud</span>
-      </div>
-      <nav class="space-x-6 text-sm font-medium">
-        <a href="/minecraft.html" class="hover:text-blue-400">Minecraft</a>
-        <a href="/vps.html" class="hover:text-blue-400">VPS</a>
-        <a href="/discord-bot.html" class="hover:text-blue-400">Discord Bots</a>
-        <a href="/web-host.html" class="hover:text-blue-400">Web Hosting</a>
-        <a href="#contact" class="hover:text-blue-400">Contact</a>
-      </nav>
-    </div>
+<body>
+  <header>
+    <img src="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true" alt="Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="minecraft.html">Minecraft</a>
+      <a href="vps.html">VPS Hosting</a>
+      <a href="discord-bot.html">Discord Bots</a>
+      <a href="web-host.html">Web Hosting</a>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-16 bg-gradient-to-r from-blue-700 to-purple-700">
-    <h1 class="text-4xl md:text-5xl font-bold">Fast & Affordable Hosting</h1>
-    <p class="mt-4 text-lg">Minecraft Servers • VPS Hosting • Discord Bots • Web Hosting</p>
-    <div class="mt-6 flex justify-center gap-4">
-      <a href="#plans" class="inline-block bg-white text-black px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-200 transition">
-        View Plans
-      </a>
-      <a href="https://discord.gg/yourserver" target="_blank" class="inline-block bg-indigo-500 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-indigo-600 transition">
-        Join Discord
-      </a>
-    </div>
+  <section class="hero">
+    <h1>Welcome to TenterCloud</h1>
+    <p>Affordable, Fast & Reliable Hosting Solutions</p>
+    <button onclick="window.location.href='https://discord.gg/yourinvite'">Join Discord</button>
   </section>
 
-  <!-- Plans Section -->
-  <section id="plans" class="py-16 max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Choose Your Hosting</h2>
-
-    <div class="grid gap-8 md:grid-cols-4">
-      <a href="/minecraft.html" class="bg-gray-900 hover:bg-gray-800 shadow-md rounded-2xl p-6 text-center transition">
-        <h3 class="text-xl font-bold mb-4">Minecraft Servers</h3>
-        <p class="text-gray-400">High-performance game hosting.</p>
-      </a>
-
-      <a href="/vps.html" class="bg-gray-900 hover:bg-gray-800 shadow-md rounded-2xl p-6 text-center transition">
-        <h3 class="text-xl font-bold mb-4">VPS Hosting</h3>
-        <p class="text-gray-400">Full control & root access.</p>
-      </a>
-
-      <a href="/discord-bot.html" class="bg-gray-900 hover:bg-gray-800 shadow-md rounded-2xl p-6 text-center transition">
-        <h3 class="text-xl font-bold mb-4">Discord Bots</h3>
-        <p class="text-gray-400">Host your bots 24/7.</p>
-      </a>
-
-      <a href="/web-host.html" class="bg-gray-900 hover:bg-gray-800 shadow-md rounded-2xl p-6 text-center transition">
-        <h3 class="text-xl font-bold mb-4">Web Hosting</h3>
-        <p class="text-gray-400">Secure & fast web hosting.</p>
-      </a>
+  <section class="services">
+    <div class="card" onclick="window.location.href='minecraft.html'">
+      <h2>Minecraft Hosting</h2>
+      <p>Play without limits. Budget & Performance plans available.</p>
+    </div>
+    <div class="card" onclick="window.location.href='vps.html'">
+      <h2>VPS Hosting</h2>
+      <p>Powerful servers for your projects. Choose Budget or Performance.</p>
+    </div>
+    <div class="card" onclick="window.location.href='discord-bot.html'">
+      <h2>Discord Bot Hosting</h2>
+      <p>Reliable uptime and smooth performance for your bots.</p>
+    </div>
+    <div class="card" onclick="window.location.href='web-host.html'">
+      <h2>Web Hosting</h2>
+      <p>Fast & secure hosting for your websites.</p>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer id="contact" class="bg-gray-950 text-gray-400 text-center py-6">
-    <p>© 2025 TenterCloud Hosting. All rights reserved.</p>
-    <p>Contact us: support@tentercloud.cfd</p>
-  </footer>
-
 </body>
 </html>
 
