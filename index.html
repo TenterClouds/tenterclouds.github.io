@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TenterCloud | Home</title>
   <link rel="icon" type="image/png" href="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true">
   <style>
-    body {margin:0;font-family:Arial, sans-serif;background:#000;color:#fff;}
-    header {display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:#111;}
-    header img {height:50px;}
-    nav a {margin:0 15px;text-decoration:none;color:#fff;font-weight:bold;transition:0.3s;}
-    nav a:hover {color:#ffcc00;}
-    .hero {text-align:center;padding:60px 20px;}
-    .hero h1 {font-size:2.8rem;margin-bottom:10px;}
-    .hero p {font-size:1.2rem;color:#ccc;}
-    .services {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;padding:40px;}
-    .card {background:#111;border-radius:15px;padding:25px;text-align:center;transition:0.3s;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.6);}
-    .card:hover {transform:scale(1.05);box-shadow:0 6px 18px rgba(255,204,0,0.4);}
-    .card h2 {color:#ffcc00;margin-bottom:10px;}
-    .card p {color:#ccc;}
-    button {background:#ffcc00;border:none;padding:12px 20px;margin-top:15px;border-radius:8px;font-weight:bold;cursor:pointer;transition:0.3s;}
-    button:hover {background:#e6b800;transform:scale(1.1);}
+    body{margin:0;font-family:Arial, sans-serif;background:#000;color:#fff;}
+    header{display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:#111;}
+    header img{height:50px;}
+    nav a{margin:0 15px;text-decoration:none;color:#fff;font-weight:bold;transition:0.3s;}
+    nav a:hover{color:#ffcc00;}
+
+    .hero{text-align:center;padding:60px 20px;}
+    .hero h1{font-size:2.5rem;margin-bottom:10px;}
+    .hero p{font-size:1.2rem;color:#aaa;}
+    .hero .buttons{margin-top:20px;}
+    .hero .buttons a{display:inline-block;margin:10px;padding:12px 24px;background:#ffcc00;color:#000;text-decoration:none;font-weight:bold;border-radius:6px;transition:0.3s;}
+    .hero .buttons a:hover{background:#e6b800;transform:scale(1.1);}
+    .hero .buttons a:active{transform:scale(0.95);}
+
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:40px;}
+    .service{background:#111;border-radius:12px;padding:30px;text-align:center;transition:0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.6);}
+    .service:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 0 20px #ffcc00;}
+    .service h2{margin-bottom:10px;color:#ffcc00;}
+    .service p{color:#aaa;}
+    .service a{display:inline-block;margin-top:15px;padding:8px 18px;background:#ffcc00;color:#000;text-decoration:none;border-radius:6px;font-weight:bold;transition:0.3s;}
+    .service a:hover{background:#e6b800;transform:scale(1.1);}
+    .service a:active{transform:scale(0.95);}
   </style>
 </head>
 <body>
   <header>
     <img src="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true" alt="Logo">
     <nav>
-      <a href="index.html">Home</a>
       <a href="minecraft.html">Minecraft</a>
       <a href="vps.html">VPS Hosting</a>
       <a href="discord-bot.html">Discord Bots</a>
@@ -37,28 +43,36 @@
 
   <section class="hero">
     <h1>Welcome to TenterCloud</h1>
-    <p>Affordable, Fast & Reliable Hosting Solutions</p>
-    <button onclick="window.location.href='https://discord.gg/yourinvite'">Join Discord</button>
+    <p>Reliable Hosting for Minecraft, VPS, Discord Bots, and Web Hosting.</p>
+    <div class="buttons">
+      <a href="#plans">View Plans</a>
+      <a href="https://discord.gg/yourinvite" target="_blank">Join Discord</a>
+    </div>
   </section>
 
-  <section class="services">
-    <div class="card" onclick="window.location.href='minecraft.html'">
+  <section id="plans" class="services">
+    <div class="service">
       <h2>Minecraft Hosting</h2>
-      <p>Play without limits. Budget & Performance plans available.</p>
+      <p>Affordable & high-performance Minecraft servers.</p>
+      <a href="minecraft.html">View</a>
     </div>
-    <div class="card" onclick="window.location.href='vps.html'">
+    <div class="service">
       <h2>VPS Hosting</h2>
-      <p>Powerful servers for your projects. Choose Budget or Performance.</p>
+      <p>Scalable virtual private servers for all your needs.</p>
+      <a href="vps.html">View</a>
     </div>
-    <div class="card" onclick="window.location.href='discord-bot.html'">
+    <div class="service">
       <h2>Discord Bot Hosting</h2>
-      <p>Reliable uptime and smooth performance for your bots.</p>
+      <p>Keep your bot online 24/7 with powerful hosting.</p>
+      <a href="discord-bot.html">View</a>
     </div>
-    <div class="card" onclick="window.location.href='web-host.html'">
+    <div class="service">
       <h2>Web Hosting</h2>
       <p>Fast & secure hosting for your websites.</p>
+      <a href="web-host.html">View</a>
     </div>
   </section>
 </body>
 </html>
+
 
