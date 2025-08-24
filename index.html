@@ -2,206 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TenterCloud.CFD</title>
-  <link rel="icon" href="https://ls.tentercloud.cfd/logo.png" />
-  <style>
-    :root {
-      --bg: #000;
-      --card: rgba(20,20,20,0.95);
-      --accent: #00f7ff;
-      --text: #e2e8f0;
-      --footer-bg: #000;
-    }
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{
-      font-family:'Segoe UI',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      scroll-behavior:smooth;
-    }
-    nav{
-      background:#000;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:12px 30px;
-      position:sticky;top:0;z-index:1000
-    }
-    nav img{height:45px}
-    nav ul{list-style:none;display:flex;gap:25px}
-    nav a{color:var(--text);text-decoration:none;font-weight:bold;transition:.3s}
-    nav a:hover{color:var(--accent)}
-    header{
-      text-align:center;
-      padding:60px 20px;
-      background:rgba(0,0,0,.6);
-      animation:fadeIn 1s ease;
-    }
-    header img{width:100px}
-    header h1{font-size:2.8em;margin-top:15px;color:var(--accent)}
-    .section{display:none;max-width:1200px;margin:30px auto;padding:30px;background:var(--card);border-radius:14px;animation:fadeIn .6s ease}
-    .section.active{display:block}
-    .tab-buttons{text-align:center;margin-bottom:20px}
-    .tab-buttons button{
-      background:transparent;
-      border:2px solid var(--accent);
-      color:var(--accent);
-      padding:8px 16px;
-      margin:0 5px;
-      border-radius:8px;
-      cursor:pointer;
-      transition:.3s;
-      font-weight:bold;
-    }
-    .tab-buttons button.active,.tab-buttons button:hover{
-      background:var(--accent);
-      color:#000;
-    }
-    .plans-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:20px;
-    }
-    .plan-card{
-      background:#111;
-      border-radius:12px;
-      padding:20px;
-      text-align:center;
-      box-shadow:0 0 12px rgba(0,0,0,.3);
-      transition:.3s;
-      opacity:0;
-      transform:translateY(20px);
-      animation:slideUp .6s forwards;
-    }
-    .plan-card:nth-child(1){animation-delay:.1s}
-    .plan-card:nth-child(2){animation-delay:.2s}
-    .plan-card:nth-child(3){animation-delay:.3s}
-    .plan-card:nth-child(4){animation-delay:.4s}
-    .plan-card:nth-child(5){animation-delay:.5s}
-    .plan-card:hover{transform:translateY(-6px);box-shadow:0 0 15px var(--accent)}
-    .plan-card h3{color:var(--accent);font-size:1.2em;margin-bottom:10px}
-    .price{color:#facc15;font-weight:bold;font-size:1.2em;margin:10px 0}
-    .btn{
-      display:inline-block;
-      padding:8px 16px;
-      background:var(--accent);
-      color:#000;
-      text-decoration:none;
-      font-weight:bold;
-      border-radius:6px;
-      margin-top:10px;
-      transition:.3s;
-    }
-    .btn:hover{background:#0ff}
-    .bottom-links{
-      max-width:1100px;
-      margin:40px auto;
-      background:#000;
-      padding:20px;
-      border-radius:12px;
-      text-align:center;
-    }
-    .bottom-links a{color:var(--accent);text-decoration:none;font-weight:600;margin:0 15px}
-    footer{background:var(--footer-bg);color:#94a3b8;text-align:center;padding:25px 10px;margin-top:50px}
-    @keyframes fadeIn{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:scale(1)}}
-    @keyframes slideUp{to{opacity:1;transform:translateY(0)}}
-    @media(max-width:768px){nav ul{flex-wrap:wrap;justify-content:center}}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TenterCloud Hosting</title>
+  <link rel="icon" type="image/png" href="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900">
 
-  <nav>
-    <img src="https://ls.tentercloud.cfd/logo.png" alt="Logo">
-    <ul>
-      <li><a href="#" onclick="showSection('home')">Home</a></li>
-      <li><a href="#" onclick="showSection('mc')">MC Host</a></li>
-      <li><a href="#" onclick="showSection('vps')">VPS Host</a></li>
-      <li><a href="https://discord.gg/pbWjbuuMpj" target="_blank">Discord</a></li>
-    </ul>
-  </nav>
-
-  <header id="home" class="section active">
-    <img src="https://ls.tentercloud.cfd/logo.png" alt="TenterCloud Logo">
-    <h1>TᴇɴᴛᴇʀCʟᴏᴜᴅ</h1>
-    <p>Your one-stop solution for Minecraft & VPS Hosting</p>
-    <br>
-    <p style="max-width:700px;margin:auto;">Reliable, affordable and high-performance hosting tailored for Minecraft servers and scalable VPS deployments.</p>
+  <!-- Navbar -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <div class="flex items-center gap-2">
+        <img src="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true" class="h-10 w-10 rounded" alt="Logo">
+        <span class="text-xl font-bold">TenterCloud</span>
+      </div>
+      <nav class="space-x-6 text-sm font-medium">
+        <a href="#plans" class="hover:text-blue-600">Plans</a>
+        <a href="#discord" class="hover:text-blue-600">Discord Bots</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- MC Hosting -->
-  <section id="mc" class="section">
-    <h2 style="text-align:center;color:var(--accent);margin-bottom:20px;">Minecraft Hosting Plans</h2>
-    <div class="tab-buttons">
-      <button onclick="switchTab('mc','budget')" class="active">Budget</button>
-      <button onclick="switchTab('mc','perf')">Performance</button>
-    </div>
-    <div id="mc-budget" class="plans-grid tab active">
-      <!-- 5 Budget Plans -->
-      <div class="plan-card"><h3>MC Budget 1</h3><p>2GB RAM • 10GB SSD</p><div class="price">₹49/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>MC Budget 2</h3><p>3GB RAM • 15GB SSD</p><div class="price">₹79/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>MC Budget 3</h3><p>4GB RAM • 25GB SSD</p><div class="price">₹99/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>MC Budget 4</h3><p>6GB RAM • 40GB SSD</p><div class="price">₹149/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>MC Budget 5</h3><p>8GB RAM • 60GB SSD</p><div class="price">₹199/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-    </div>
-    <div id="mc-perf" class="plans-grid tab" style="display:none;">
-      <!-- 5 Performance Plans -->
-      <div class="plan-card"><h3>MC Perf 1</h3><p>4GB RAM • NVMe</p><div class="price">₹99/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>MC Perf 2</h3><p>6GB RAM • NVMe</p><div class="price">₹149/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>MC Perf 3</h3><p>8GB RAM • NVMe</p><div class="price">₹199/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>MC Perf 4</h3><p>12GB RAM • NVMe</p><div class="price">₹299/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>MC Perf 5</h3><p>16GB RAM • NVMe</p><div class="price">₹399/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
+  <!-- Hero Section -->
+  <section class="text-center py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+    <h1 class="text-4xl md:text-5xl font-bold">Fast & Affordable Hosting</h1>
+    <p class="mt-4 text-lg">Minecraft Servers • VPS Hosting • Discord Bots</p>
+    <a href="#plans" class="mt-6 inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100 transition">
+      View Plans
+    </a>
+  </section>
+
+  <!-- Plans Section -->
+  <section id="plans" class="py-16 max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Our Hosting Plans</h2>
+
+    <div class="grid gap-8 md:grid-cols-3">
+      <!-- Minecraft Servers -->
+      <div class="bg-white shadow-md rounded-2xl p-6 text-center">
+        <h3 class="text-xl font-bold mb-4">Minecraft Servers</h3>
+        <p class="text-gray-600 mb-4">High-performance servers for your SMP, Lifesteal, or Network.</p>
+        <span class="block text-2xl font-bold mb-4">₹199/mo</span>
+        <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">Get Started</a>
+      </div>
+
+      <!-- VPS Hosting -->
+      <div class="bg-white shadow-md rounded-2xl p-6 text-center">
+        <h3 class="text-xl font-bold mb-4">VPS Hosting</h3>
+        <p class="text-gray-600 mb-4">Reliable VPS solutions with root access & full control.</p>
+        <span class="block text-2xl font-bold mb-4">₹299/mo</span>
+        <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">Get Started</a>
+      </div>
+
+      <!-- Web Hosting -->
+      <div class="bg-white shadow-md rounded-2xl p-6 text-center">
+        <h3 class="text-xl font-bold mb-4">Web Hosting</h3>
+        <p class="text-gray-600 mb-4">Fast & secure hosting for your websites and apps.</p>
+        <span class="block text-2xl font-bold mb-4">₹99/mo</span>
+        <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">Get Started</a>
+      </div>
     </div>
   </section>
 
-  <!-- VPS Hosting -->
-  <section id="vps" class="section">
-    <h2 style="text-align:center;color:var(--accent);margin-bottom:20px;">VPS Hosting Plans</h2>
-    <div class="tab-buttons">
-      <button onclick="switchTab('vps','budget')" class="active">Budget</button>
-      <button onclick="switchTab('vps','perf')">Performance</button>
-    </div>
-    <div id="vps-budget" class="plans-grid tab active">
-      <!-- 5 Budget VPS -->
-      <div class="plan-card"><h3>VPS Budget 1</h3><p>1 vCPU • 1GB RAM</p><div class="price">₹59/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>VPS Budget 2</h3><p>1 vCPU • 2GB RAM</p><div class="price">₹99/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>VPS Budget 3</h3><p>2 vCPU • 4GB RAM</p><div class="price">₹199/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>VPS Budget 4</h3><p>3 vCPU • 6GB RAM</p><div class="price">₹299/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>VPS Budget 5</h3><p>4 vCPU • 8GB RAM</p><div class="price">₹399/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-    </div>
-    <div id="vps-perf" class="plans-grid tab" style="display:none;">
-      <!-- 5 Performance VPS -->
-      <div class="plan-card"><h3>VPS Perf 1</h3><p>2 vCPU • 4GB RAM • NVMe</p><div class="price">₹149/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>VPS Perf 2</h3><p>2 vCPU • 6GB RAM • NVMe</p><div class="price">₹249/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>VPS Perf 3</h3><p>4 vCPU • 8GB RAM • NVMe</p><div class="price">₹349/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>VPS Perf 4</h3><p>6 vCPU • 16GB RAM • NVMe</p><div class="price">₹599/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
-      <div class="plan-card"><h3>VPS Perf 5</h3><p>8 vCPU • 32GB RAM • NVMe</p><div class="price">₹999/Month</div><a href="https://discord.gg/pbWjbuuMpj" class="btn">Buy Now</a></div>
+  <!-- Discord Bot Hosting Section -->
+  <section id="discord" class="py-16 bg-gray-100 px-6">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Discord Bot Hosting</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        
+        <div class="bg-white shadow-md rounded-2xl p-6 text-center">
+          <h3 class="text-xl font-bold mb-4">Starter</h3>
+          <p class="text-gray-600 mb-4">Perfect for small bots & testing.</p>
+          <span class="block text-2xl font-bold mb-4">₹49/mo</span>
+          <a href="#" class="bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700">Get Started</a>
+        </div>
+
+        <div class="bg-white shadow-md rounded-2xl p-6 text-center">
+          <h3 class="text-xl font-bold mb-4">Pro</h3>
+          <p class="text-gray-600 mb-4">Run medium bots with smooth performance.</p>
+          <span class="block text-2xl font-bold mb-4">₹99/mo</span>
+          <a href="#" class="bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700">Get Started</a>
+        </div>
+
+        <div class="bg-white shadow-md rounded-2xl p-6 text-center">
+          <h3 class="text-xl font-bold mb-4">Premium</h3>
+          <p class="text-gray-600 mb-4">Best for large bots & 24/7 uptime.</p>
+          <span class="block text-2xl font-bold mb-4">₹149/mo</span>
+          <a href="#" class="bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700">Get Started</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <div class="bottom-links">
-    <h3 style="color:var(--accent); margin-bottom:10px;">Quick Links</h3>
-    <a href="https://gp.tentercloud.cfd" target="_blank">Panel</a> |
-    <a href="https://status.tentercloud.cfd" target="_blank">Status</a> |
-    <a href="https://discord.gg/pbWjbuuMpj" target="_blank">Discord</a>
-  </div>
-
-  <footer>
-    &copy; 2025 TenterCloud. All rights reserved.
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-900 text-gray-300 text-center py-6">
+    <p>© 2025 TenterCloud Hosting. All rights reserved.</p>
+    <p>Contact us: support@tentercloud.cfd</p>
   </footer>
-
-  <script>
-    function showSection(id){
-      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-    function switchTab(host,type){
-      document.querySelectorAll('#'+host+' .tab-buttons button').forEach(btn=>btn.classList.remove('active'));
-      event.target.classList.add('active');
-      document.querySelectorAll('#'+host+' .tab').forEach(t=>t.style.display='none');
-      document.getElementById(host+'-'+type).style.display='grid';
-    }
-  </script>
 
 </body>
 </html>
