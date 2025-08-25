@@ -6,52 +6,28 @@
   <title>Minecraft Hosting | TenterCloud</title>
   <link rel="icon" type="image/png" href="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true">
   <style>
-    body {margin:0;font-family:Arial, sans-serif;background:#000;color:#fff;}
+    body{margin:0;font-family:Arial, sans-serif;background:#000;color:#fff;}
     header{display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:#001f2e;}
     header img{height:50px;}
     nav a{margin:0 15px;text-decoration:none;color:#fff;font-weight:bold;transition:0.3s;}
-    nav a:hover{color:#00e5ff;}
+    nav a:hover{color:#00e5ff;text-shadow:0 0 10px #00e5ff;}
 
     .hero{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#001f2e,#003d52);}
-    .hero h1{font-size:3rem;color:#00e5ff;text-shadow:0 0 20px #00e5ff;}
+    .hero h1{font-size:3rem;color:#00e5ff;text-shadow:0 0 25px #00e5ff;}
+    .hero p{color:#ccc;font-size:1.1rem;margin-top:10px;}
 
-    .toggle-buttons{text-align:center;margin:30px 0;}
-    .toggle-buttons button{
-      background:#02141d;color:#00e5ff;border:2px solid #00e5ff;
-      padding:10px 25px;margin:0 10px;border-radius:8px;cursor:pointer;
-      font-size:1rem;font-weight:bold;transition:0.3s;
-    }
-    .toggle-buttons button.active, .toggle-buttons button:hover{
-      background:#00e5ff;color:#000;box-shadow:0 0 15px #00e5ff;
-      transform:scale(1.05);
-    }
+    .category-select{text-align:center;margin:30px 0;}
+    select{padding:10px 15px;border-radius:8px;border:none;font-weight:bold;font-size:1rem;background:#00e5ff;color:#000;cursor:pointer;}
+    select:focus{outline:none;}
 
-    .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;padding:40px;max-width:1200px;margin:auto;}
-    .plan{
-      background:linear-gradient(145deg,#01171f,#012d3b);
-      border-radius:14px;padding:25px;text-align:center;
-      box-shadow:0 0 12px rgba(0,229,255,0.2);
-      transition:transform 0.3s, box-shadow 0.3s;
-      position:relative;overflow:hidden;
-    }
-    .plan::before{
-      content:"";position:absolute;top:-50%;left:-50%;
-      width:200%;height:200%;background:radial-gradient(circle,#00e5ff33,transparent 60%);
-      transform:rotate(25deg);opacity:0;transition:opacity 0.5s;
-    }
-    .plan:hover::before{opacity:1;}
-    .plan:hover{transform:translateY(-8px);box-shadow:0 0 25px #00e5ff;}
-    .plan h3{margin-bottom:15px;color:#00e5ff;font-size:1.4rem;}
-    .plan p{margin:6px 0;color:#ddd;}
-    .plan button{
-      background:#00e5ff;border:none;padding:10px 22px;margin-top:15px;
-      cursor:pointer;border-radius:8px;font-weight:bold;
-      transition:0.3s;font-size:1rem;
-    }
+    .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;padding:40px;max-width:1200px;margin:auto;}
+    .plan{background:linear-gradient(145deg,#01171f,#012d3b);border-radius:14px;padding:25px;text-align:center;box-shadow:0 0 12px rgba(0,229,255,0.2);transition:transform 0.3s, box-shadow 0.3s;}
+    .plan:hover{transform:scale(1.06);box-shadow:0 0 25px #00e5ff;}
+    .plan h3{color:#00e5ff;margin-bottom:10px;}
+    .plan p{margin:6px 0;}
+    .plan button{background:#00e5ff;color:#000;border:none;padding:10px 20px;margin-top:12px;cursor:pointer;border-radius:6px;font-weight:bold;transition:0.3s;}
     .plan button:hover{background:#00bcd4;transform:scale(1.1);}
     .plan button:active{transform:scale(0.95);}
-    .hidden{display:none;}
   </style>
 </head>
 <body>
@@ -60,59 +36,66 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="minecraft.html">Minecraft</a>
-      <a href="vps.html">VPS</a>
-      <a href="discord-bot.html">Discord Bot</a>
-      <a href="web-host.html">Web Hosting</a>
+      <a href="vps.html">VPS Hosting</a>
+      <a href="discord.html">Discord Bot</a>
+      <a href="web.html">Web Hosting</a>
     </nav>
   </header>
 
   <section class="hero">
     <h1>Minecraft Hosting</h1>
-    <p>Select between Budget and Performance hosting plans</p>
+    <p>Choose Budget Ryzen 5 or Performance Ryzen 7 plans for your Minecraft server.</p>
   </section>
 
-  <div class="toggle-buttons">
-    <button id="budgetBtn" class="active">💸 Budget Plans</button>
-    <button id="performanceBtn">🚀 Performance Plans</button>
+  <div class="category-select">
+    <label for="category">Select Category: </label>
+    <select id="category" onchange="switchCategory()">
+      <option value="budget">💸 Budget (Ryzen 5)</option>
+      <option value="performance">⚡ Performance (Ryzen 7)</option>
+    </select>
   </div>
 
-  <!-- Budget Plans -->
-  <div id="budgetPlans" class="plans">
-    <div class="plan"><h3>Budget 1</h3><p>2 GB RAM</p><p>1 vCPU</p><p>$2/mo</p><button>Order</button></div>
-    <div class="plan"><h3>Budget 2</h3><p>4 GB RAM</p><p>2 vCPU</p><p>$4/mo</p><button>Order</button></div>
-    <div class="plan"><h3>Budget 3</h3><p>6 GB RAM</p><p>3 vCPU</p><p>$6/mo</p><button>Order</button></div>
-    <div class="plan"><h3>Budget 4</h3><p>8 GB RAM</p><p>4 vCPU</p><p>$8/mo</p><button>Order</button></div>
-    <div class="plan"><h3>Budget 5</h3><p>10 GB RAM</p><p>4 vCPU</p><p>$10/mo</p><button>Order</button></div>
-  </div>
-
-  <!-- Performance Plans -->
-  <div id="performancePlans" class="plans hidden">
-    <div class="plan"><h3>Performance 1</h3><p>4 GB RAM</p><p>2 High Clock vCPU</p><p>$5/mo</p><button>Order</button></div>
-    <div class="plan"><h3>Performance 2</h3><p>8 GB RAM</p><p>3 High Clock vCPU</p><p>$9/mo</p><button>Order</button></div>
-    <div class="plan"><h3>Performance 3</h3><p>12 GB RAM</p><p>4 High Clock vCPU</p><p>$13/mo</p><button>Order</button></div>
-    <div class="plan"><h3>Performance 4</h3><p>16 GB RAM</p><p>6 High Clock vCPU</p><p>$18/mo</p><button>Order</button></div>
-    <div class="plan"><h3>Performance 5</h3><p>24 GB RAM</p><p>8 High Clock vCPU</p><p>$25/mo</p><button>Order</button></div>
-  </div>
+  <div id="plans" class="plans"></div>
 
   <script>
-    const budgetBtn = document.getElementById("budgetBtn");
-    const performanceBtn = document.getElementById("performanceBtn");
-    const budgetPlans = document.getElementById("budgetPlans");
-    const performancePlans = document.getElementById("performancePlans");
+    const budgetPlans = [
+      {name:"MC Ryzen 5 - 2GB",cpu:"2 vCPU",ram:"2GB RAM",disk:"20GB NVMe",price:"₹149 / month"},
+      {name:"MC Ryzen 5 - 4GB",cpu:"2 vCPU",ram:"4GB RAM",disk:"40GB NVMe",price:"₹249 / month"},
+      {name:"MC Ryzen 5 - 6GB",cpu:"3 vCPU",ram:"6GB RAM",disk:"60GB NVMe",price:"₹349 / month"},
+      {name:"MC Ryzen 5 - 8GB",cpu:"4 vCPU",ram:"8GB RAM",disk:"80GB NVMe",price:"₹449 / month"},
+      {name:"MC Ryzen 5 - 16GB",cpu:"6 vCPU",ram:"16GB RAM",disk:"120GB NVMe",price:"₹699 / month"}
+    ];
 
-    budgetBtn.addEventListener("click", () => {
-      budgetPlans.classList.remove("hidden");
-      performancePlans.classList.add("hidden");
-      budgetBtn.classList.add("active");
-      performanceBtn.classList.remove("active");
-    });
+    const performancePlans = [
+      {name:"MC Ryzen 7 - 4GB",cpu:"2 vCPU",ram:"4GB RAM",disk:"40GB NVMe",price:"₹349 / month"},
+      {name:"MC Ryzen 7 - 8GB",cpu:"3 vCPU",ram:"8GB RAM",disk:"80GB NVMe",price:"₹549 / month"},
+      {name:"MC Ryzen 7 - 12GB",cpu:"4 vCPU",ram:"12GB RAM",disk:"120GB NVMe",price:"₹749 / month"},
+      {name:"MC Ryzen 7 - 16GB",cpu:"6 vCPU",ram:"16GB RAM",disk:"160GB NVMe",price:"₹949 / month"},
+      {name:"MC Ryzen 7 - 24GB",cpu:"8 vCPU",ram:"24GB RAM",disk:"240GB NVMe",price:"₹1299 / month"}
+    ];
 
-    performanceBtn.addEventListener("click", () => {
-      performancePlans.classList.remove("hidden");
-      budgetPlans.classList.add("hidden");
-      performanceBtn.classList.add("active");
-      budgetBtn.classList.remove("active");
-    });
+    function renderPlans(plans) {
+      const container = document.getElementById("plans");
+      container.innerHTML = "";
+      plans.forEach(p => {
+        container.innerHTML += `
+          <div class="plan">
+            <h3>${p.name}</h3>
+            <p>${p.cpu}</p>
+            <p>${p.ram}</p>
+            <p>${p.disk}</p>
+            <p>${p.price}</p>
+            <button>Order Now</button>
+          </div>
+        `;
+      });
+    }
+    function switchCategory() {
+      const value = document.getElementById("category").value;
+      if(value === "budget") renderPlans(budgetPlans);
+      else renderPlans(performancePlans);
+    }
+    renderPlans(budgetPlans);
   </script>
 </body>
 </html>
