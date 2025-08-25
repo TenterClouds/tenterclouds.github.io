@@ -4,53 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VPS Hosting | TenterCloud</title>
+  <link rel="icon" type="image/png" href="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true">
   <style>
-    body {margin:0;font-family:Arial;background:#000;color:#fff;}
-    header {display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:#111;}
-    header img {height:50px;}
-    nav a {margin:0 15px;text-decoration:none;color:#fff;font-weight:bold;transition:0.3s;}
-    nav a:hover {color:#ffcc00;}
-    .hero {text-align:center;padding:50px 20px;}
-    .plans {display:flex;justify-content:center;gap:30px;padding:40px;flex-wrap:wrap;}
-    .plan {background:#111;border-radius:15px;padding:25px;width:260px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.6);transition:0.3s;}
-    .plan:hover {transform:scale(1.05);box-shadow:0 6px 18px rgba(255,204,0,0.4);}
-    .plan h2 {color:#ffcc00;}
-    button {background:#ffcc00;border:none;padding:10px 18px;margin-top:12px;border-radius:8px;font-weight:bold;cursor:pointer;transition:0.3s;}
-    button:hover {background:#e6b800;transform:scale(1.1);}
+    body {margin:0;font-family:Arial, sans-serif;background:#000;color:#fff;}
+    header{display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:#001f2e;}
+    header img{height:50px;}
+    nav a{margin:0 15px;text-decoration:none;color:#fff;font-weight:bold;transition:0.3s;}
+    nav a:hover{color:#00e5ff;}
+
+    .hero{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#001f2e,#003d52);}
+    .hero h1{font-size:3rem;color:#00e5ff;text-shadow:0 0 20px #00e5ff;}
+    .hero p{color:#ccc;font-size:1.1rem;margin-top:10px;}
+
+    h2.section-title{text-align:center;font-size:2rem;margin-top:50px;color:#00e5ff;text-shadow:0 0 15px #00e5ff;}
+
+    .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;padding:40px;max-width:1200px;margin:auto;}
+    .plan{
+      background:linear-gradient(145deg,#01171f,#012d3b);
+      border-radius:14px;padding:25px;text-align:center;
+      box-shadow:0 0 12px rgba(0,229,255,0.2);
+      transition:transform 0.3s, box-shadow 0.3s;
+    }
+    .plan:hover{transform:scale(1.06);box-shadow:0 0 25px #00e5ff;}
+    .plan h3{color:#00e5ff;margin-bottom:10px;}
+    .plan p{margin:6px 0;}
+    .plan button{
+      background:#00e5ff;color:#000;border:none;
+      padding:10px 20px;margin-top:12px;
+      cursor:pointer;border-radius:6px;font-weight:bold;
+      transition:0.3s;
+    }
+    .plan button:hover{background:#00bcd4;transform:scale(1.1);}
+    .plan button:active{transform:scale(0.95);}
   </style>
 </head>
 <body>
   <header>
-    <img src="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true">
+    <img src="https://github.com/TenterClouds/tenterclouds.github.io/blob/main/logoo.png?raw=true" alt="Logo">
     <nav>
       <a href="index.html">Home</a>
       <a href="minecraft.html">Minecraft</a>
       <a href="vps.html">VPS Hosting</a>
-      <a href="discord-bot.html">Discord Bots</a>
-      <a href="web-host.html">Web Hosting</a>
+      <a href="discord.html">Discord Bot</a>
+      <a href="web.html">Web Hosting</a>
     </nav>
   </header>
 
   <section class="hero">
     <h1>VPS Hosting</h1>
-    <p>Choose your plan – Budget or Performance.</p>
+    <p>Choose from Budget Ryzen 5 or Performance Ryzen 9 VPS plans.</p>
   </section>
 
-  <section class="plans">
+  <h2 class="section-title">💸 Budget VPS (Ryzen 5)</h2>
+  <div class="plans">
     <div class="plan">
-      <h2>Budget</h2>
-      <p>2 vCPU</p>
-      <p>4 GB RAM</p>
-      <p>50 GB SSD</p>
+      <h3>Ryzen 5 - 2GB</h3>
+      <p>2 vCPU Cores</p>
+      <p>2GB DDR4 RAM</p>
+      <p>30GB NVMe SSD</p>
+      <p>₹249 / month</p>
       <button>Order Now</button>
     </div>
     <div class="plan">
-      <h2>Performance</h2>
-      <p>6 vCPU</p>
-      <p>16 GB RAM</p>
-      <p>200 GB NVMe</p>
+      <h3>Ryzen 5 - 4GB</h3>
+      <p>2 vCPU Cores</p>
+      <p>4GB DDR4 RAM</p>
+      <p>60GB NVMe SSD</p>
+      <p>₹399 / month</p>
       <button>Order Now</button>
     </div>
-  </section>
+    <div class="plan">
+      <h3>Ryzen 5 - 6GB</h3>
+      <p>3 vCPU Cores</p>
+      <p>6GB DDR4 RAM</p>
+      <p>100GB NVMe SSD</p>
+      <p>₹549 / month</p>
+      <button>Order Now</button>
+    </div>
+    <div class="plan">
+      <h3>Ryzen 5 - 8GB</h3>
+      <p>4 vCPU Cores</p>
+      <p>8GB DDR4 RAM</p>
+      <p>150GB NVMe SSD</p>
+      <p>₹699 / month</p>
+      <button>Order Now</button>
+    </div>
+    <div class="plan">
+      <h3>Ryzen 5 - 16GB</h3>
+      <p>6 vCPU Cores</p>
+      <p>16GB DDR4 RAM</p>
+      <p>250GB NVMe SSD</p>
+      <p>₹999 / month</p>
+      <button>Order Now</button>
+    </div>
+  </div>
+
+  <h2 class="section-title">⚡ Performance VPS (Ryzen 9)</h2>
+  <div class="plans">
+    <div class="plan">
+      <h3>Ryzen 9 - 2GB</h3>
+      <p>2 vCPU Cores</p>
+      <p>2GB DDR4 RAM</p>
+      <p>30GB NVMe SSD</p>
+      <p>₹349 / month</p>
+      <button>Order Now</button>
+    </div>
+    <div class="plan">
+      <h3>Ryzen 9 - 4GB</h3>
+      <p>3 vCPU Cores</p>
+      <p>4GB DDR4 RAM</p>
+      <p>70GB NVMe SSD</p>
+      <p>₹499 / month</p>
+      <button>Order Now</button>
+    </div>
+    <div class="plan">
+      <h3>Ryzen 9 - 8GB</h3>
+      <p>4 vCPU Cores</p>
+      <p>8GB DDR4 RAM</p>
+      <p>160GB NVMe SSD</p>
+      <p>₹799 / month</p>
+      <button>Order Now</button>
+    </div>
+    <div class="plan">
+      <h3>Ryzen 9 - 12GB</h3>
+      <p>6 vCPU Cores</p>
+      <p>12GB DDR4 RAM</p>
+      <p>220GB NVMe SSD</p>
+      <p>₹1099 / month</p>
+      <button>Order Now</button>
+    </div>
+    <div class="plan">
+      <h3>Ryzen 9 - 16GB</h3>
+      <p>8 vCPU Cores</p>
+      <p>16GB DDR4 RAM</p>
+      <p>300GB NVMe SSD</p>
+      <p>₹1399 / month</p>
+      <button>Order Now</button>
+    </div>
+  </div>
 </body>
 </html>
